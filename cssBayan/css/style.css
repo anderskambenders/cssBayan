@@ -1,0 +1,101 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 65%;
+}
+.container {
+    margin: 0 auto;
+    padding: 10vw;
+    padding-top: 2vw;
+    background-color: #fff;
+}
+.accordeon__svg {
+    width: calc(3vh + 10 * (100vw / 1920));
+    height: calc(3vh + 10 * (100vw / 1920));
+    visibility: hidden;
+}
+.accordeon {
+    margin: 0 auto;
+    margin-bottom: 6vw;
+    list-style: none;
+}
+.accordeon:hover .accordeon__label > .accordeon__svg {
+    visibility: visible;
+}
+
+.head {
+    margin: 0;
+    margin-bottom: 2vw;
+    text-align: center;
+    font-weight: 700;
+    font-size: calc(0.5em + 50 * (100vw / 1920));
+}
+.accordeon__item {
+    border-bottom: 1px solid rgba(41, 41, 41, 0.3);
+}
+
+.accordeon__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 2.5vw;
+    font-size: calc(0.3em + 40 * (100vw / 1920));
+    font-weight: 400;
+}
+.accordeon__title {
+    margin: 0;
+    font-weight: 600;
+    color: rebeccapurple;
+    transition: all 0.5s ease-in-out;
+}
+.accordeon:hover .accordeon__label > .accordeon__title {
+    color: black;
+}
+
+.accordeon__switch {
+    display: none;
+}
+.accordeon__content {
+    margin: 0;
+    padding: 0;
+    max-width: 0;
+    max-height: 0;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+.accordeon__switch:checked + .accordeon__label > .accordeon__svg {
+    transform: rotate(45deg);
+    transition: all 0.5s ease-in-out;
+}
+.accordeon__switch:checked + .accordeon__label + .accordeon__content {
+    max-height: 100%;
+    max-width: 100%;
+    transition: all 0.5s ease-out;
+}
+.accordeon__image {
+    display: block;
+    margin: auto;
+}
+
+@media (hover: hover) {
+    .accordeon__item:hover > .accordeon__content {
+        max-height: 100%;
+        max-width: 100%;
+        transition: all 0.5s ease-out;
+    }
+    .accordeon__item:hover > .accordeon__label > .accordeon__svg {
+        transform: rotate(45deg);
+        transition: all 0.5s ease-in-out;
+    }
+}
+
