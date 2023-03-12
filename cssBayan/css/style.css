@@ -18,13 +18,14 @@ img {
     background-color: #fff;
 }
 .accordeon__svg {
-    width: calc(3vh + 10 * (100vw / 1920));
-    height: calc(3vh + 10 * (100vw / 1920));
+    width: calc(1.2vh + 15 * (100vw / 1920));
+    height: calc(1.2vh + 15 * (100vw / 1920));
     visibility: hidden;
 }
 .accordeon {
     margin: 0 auto;
     margin-bottom: 6vw;
+    padding: 0;
     list-style: none;
 }
 .accordeon:hover .accordeon__label > .accordeon__svg {
